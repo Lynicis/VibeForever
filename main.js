@@ -10,12 +10,13 @@ const createWindow = () => {
         frame: false,
         resizable: false,
         focusable: false,
+        transparent: true,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }
     })
 
-    win.loadFile("file://" + path.join(__dirname, 'index.html'))
+    win.loadFile(path.join(__dirname, 'index.html'))
 }
 
 app.whenReady().then(() => {
